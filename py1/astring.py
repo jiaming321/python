@@ -68,5 +68,55 @@ print('hello %(name)s, I\'m %(age)d and My height is %(height)05.2f m'%{'name': 
 # [[fill]align][sign][#][0][,][.precision][type]  用 : 代替 %
 print('-------------------------------------')
 print('----{:*^20s}----'.format('welcome'))
-print('My name is {name:s}, I\'m {age:d} now and My Height is {height:,.2f}'.format(name='Jiaming', age=21, height=1111.987))
+print('My name is {}, I\'m {} now and My Height is {}'.format('Jiaming', 21, 1.987))
+print('My name is {1}, I\'m {0} now and My Height is {2}'.format(21, 'Jiaming', 1.987))
+print('My name is {name:s}, I\'m {age:d} now and My Height is {height:,.2f}'.
+      format(name='Jiaming', age=21, height=1.908))
 
+# 字符串常用操作
+# 检查子字符串 in/not in
+print('-------------------------------------')
+str1 = "Hello World Hahaha xx dd"
+print('xx' in str1)
+print('xx' not in str1)
+
+# 拼接 +
+print('Hello '+'World')
+
+# 复制 *
+print('Hello'*2)
+
+# 截取 str[i] 取某个字符   str[i:j] 取i到j（不包括j)的切片,i不写表示从0开始截取，j不写表截到结束
+print(str1[1])
+print(str1[:])
+# str[x:y:z] 从x开始截取，到y结束（不包括y），每隔z取一次字符
+print(str1[1:11:3])
+
+# 获取字符串长度、最大字符、最小字符
+print(len(str1))
+print(max(str1))
+print(min('abcd'))
+
+# 查找&替换
+# str.count(substr,beginIndex,endIndex) 统计子字符串出现的次数
+print(str1.count('ha'))
+print(str1.count('ha', 0, 16))
+# str.find(sub,begin,end) str.rfind(sub[,start[,end]]) 返回首次查到的index，无则返回-1
+# str.index(sub[,start[,end]]) str.rindex(sub[,start[,end]]) 不存在会报错
+print(str1.find('o', 0, len(str1)))
+# str.replace(old, new[, count]) 用新字符串替换老字符串，可选替换次数，不改变原值
+print(str1.replace('llo', 'EEE'))
+# str.startswith(str[, start[, end]]) str.endswith(str[, start[, end]]) 以str开头/结尾
+# str.isalnum() str.isalpha() str.isdigit() str.islower() str.isupper() str.istitle()
+# str.lower() str.upper() str.swapcase()
+# str.capitalize() 首字母大写  str.title() 每个单词首字母大写
+# str.center(width[, fill])  str.ljust(width[, fill])  str.rjust(width[, fill]) 中/左/右对齐
+# str.strip([chars])  str.rstrip([chars])  str.lstrip([chars]) 从两端/右边/左边 去除以chars开头的字符串，默认空格
+print('-------------------------------------')
+print(str1.strip('Hell'))
+
+# 拆分组合 str.partition(sep) str.rpartition(sep)  str.split(sep[, maxsplit]) str.rsplit(sep[, maxsplit])
+# str.join(iterator)
+print('ABC123AA bb'.partition('23'))
+print('ABC123AA bb'.split('23'))
+print('ABC123AA bb'.join('xyz'))
